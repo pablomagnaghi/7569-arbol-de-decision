@@ -35,5 +35,9 @@ public class Atributo {
 		}
 		return s;
 	}
+	
+	public String getAttackLevel(String Value){
+		return this.valoresPosibles.get(Value);
+	}
 
 }
