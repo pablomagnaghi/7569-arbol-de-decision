@@ -8,12 +8,14 @@ import javax.swing.JRadioButton;
 import model.Atributo;
 import model.Manager;
 import utilities.Constants;
+import view.AttackCalculatorView;
 import view.ChooseOptionView;
 import view.StartView;
 
 public class StartViewController {
 	
 	private StartView view;
+	private AttackCalculatorView attackView;
 	private ChooseOptionView currentOption = null;
 	private Manager manager;
 
@@ -89,8 +91,14 @@ public class StartViewController {
 			this.view.fillTable();
 		} else {
 			this.manager.showFilledTree();
-			System.exit(1);
+			this.attackView = new AttackCalculatorView();
+			this.attackView.setController(this);
+			this.attackView.setVisible(Boolean.TRUE);
 		}
+	}
+
+	public void handleButtonCalcular() {
+		
 	}
 
 }

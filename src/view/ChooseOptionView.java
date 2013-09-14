@@ -112,9 +112,9 @@ public class ChooseOptionView extends JFrame {
 			group2.add(getDosNo());
 			group2.add(getDosDesp());
 		} else {
-			ButtonGroup group1 = new ButtonGroup();
-			group1.add(getUnoSi());
-			group1.add(getUnoNo());
+			ButtonGroup group2 = new ButtonGroup();
+			group2.add(getDosSi());
+			group2.add(getDosNo());
 		}
 		
 		if (listaAtributos.size()>2){
