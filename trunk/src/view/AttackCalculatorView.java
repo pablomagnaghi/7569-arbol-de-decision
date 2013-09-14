@@ -13,6 +13,7 @@ import javax.swing.border.EmptyBorder;
 import controller.StartViewController;
 import utilities.Constants;
 
+@SuppressWarnings("rawtypes")
 public class AttackCalculatorView extends JFrame {
 
 	private JPanel contentPane;
@@ -35,19 +36,19 @@ public class AttackCalculatorView extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblAttr = new JLabel(Constants.distancia);
-		lblAttr.setBounds(113, 34, 111, 39);
+		lblAttr.setBounds(35, 34, 164, 39);
 		contentPane.add(lblAttr);
 		
 		JLabel lblAttr_1 = new JLabel(Constants.visibilidad);
-		lblAttr_1.setBounds(104, 101, 70, 15);
+		lblAttr_1.setBounds(35, 101, 203, 15);
 		contentPane.add(lblAttr_1);
 		
 		JLabel lblAttr_2 = new JLabel(Constants.nivelVida);
-		lblAttr_2.setBounds(104, 153, 70, 15);
+		lblAttr_2.setBounds(35, 153, 164, 15);
 		contentPane.add(lblAttr_2);
 		
 		JLabel lblAttr_3 = new JLabel(Constants.tipoArma);
-		lblAttr_3.setBounds(104, 210, 70, 15);
+		lblAttr_3.setBounds(35, 215, 164, 15);
 		contentPane.add(lblAttr_3);
 		
 		JButton btnCalcular = new JButton("Calcular");
@@ -59,24 +60,57 @@ public class AttackCalculatorView extends JFrame {
 		});
 		contentPane.add(btnCalcular);
 		
-		distanciaCombo = new JComboBox(distancia);
-		distanciaCombo.setBounds(256, 41, 151, 24);
-		contentPane.add(distanciaCombo);
+		setDistanciaCombo(new JComboBox(distancia));
+		getDistanciaCombo().setBounds(256, 41, 151, 24);
+		contentPane.add(getDistanciaCombo());
 		
-		visibilidadCombo = new JComboBox(visibilidad);
-		visibilidadCombo.setBounds(256, 96, 151, 24);
-		contentPane.add(visibilidadCombo);
+		setVisibilidadCombo(new JComboBox(visibilidad));
+		getVisibilidadCombo().setBounds(256, 96, 151, 24);
+		contentPane.add(getVisibilidadCombo());
 		
-		vidaCombo = new JComboBox(vida);
-		vidaCombo.setBounds(256, 148, 151, 24);
-		contentPane.add(vidaCombo);
+		setVidaCombo(new JComboBox(vida));
+		getVidaCombo().setBounds(256, 148, 151, 24);
+		contentPane.add(getVidaCombo());
 		
-		tipoArmaCombo = new JComboBox(tipoArma);
-		tipoArmaCombo.setBounds(256, 210, 151, 24);
-		contentPane.add(tipoArmaCombo);
+		setTipoArmaCombo(new JComboBox(tipoArma));
+		getTipoArmaCombo().setBounds(256, 210, 151, 24);
+		contentPane.add(getTipoArmaCombo());
 	}
 
 	public void setController(StartViewController startViewController) {
 		this.controller = startViewController;
 	}
+
+	public JComboBox getDistanciaCombo() {
+		return distanciaCombo;
+	}
+
+	public void setDistanciaCombo(JComboBox distanciaCombo) {
+		this.distanciaCombo = distanciaCombo;
+	}
+
+	public JComboBox getVisibilidadCombo() {
+		return visibilidadCombo;
+	}
+
+	public void setVisibilidadCombo(JComboBox visibilidadCombo) {
+		this.visibilidadCombo = visibilidadCombo;
+	}
+
+	public JComboBox getVidaCombo() {
+		return vidaCombo;
+	}
+
+	public void setVidaCombo(JComboBox vidaCombo) {
+		this.vidaCombo = vidaCombo;
+	}
+
+	public JComboBox getTipoArmaCombo() {
+		return tipoArmaCombo;
+	}
+
+	public void setTipoArmaCombo(JComboBox tipoArmaCombo) {
+		this.tipoArmaCombo = tipoArmaCombo;
+	}
+	
 }
